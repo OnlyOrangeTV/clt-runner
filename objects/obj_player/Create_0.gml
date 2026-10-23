@@ -66,7 +66,7 @@ perde_vida = function()
                 global.recorde = global.pontos;
             }
             
-            room_restart(); //resetando a room
+            global.vivo = false;
         }
     }
 }
