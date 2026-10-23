@@ -25,5 +25,7 @@ if ((x >= destino - 16 and destino == 164) or (x <= destino + 16 and destino == 
     x = destino;
 }
 
+show_debug_message(global.pontos)
+
 coleta_item();
 perde_vida();

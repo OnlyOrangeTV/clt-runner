@@ -19,6 +19,9 @@ coleta_item = function()
         {
             instance_destroy(_comida_tocada); //destruo ela
         }
+        
+        //aumentando a minha pontuação
+        global.pontos++;
     }
 }
 
@@ -28,6 +31,9 @@ perde_vida = function()
     //se tocar na clt perco
     if (place_meeting(x, y, obj_clt))
     {
+        //resetando os meus pontos
+        global.pontos = 0;
+        
         room_restart(); //resetando a room
     }
 }
