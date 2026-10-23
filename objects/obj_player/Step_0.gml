@@ -1,0 +1,25 @@
+//fazendo o player trocar de lado
+if (keyboard_check_pressed(vk_space))
+{
+    //mudando meu destino
+    if (destino == 164)
+    {
+        destino = 16;
+    }
+    else
+    {
+        destino = 164;
+    }
+    
+    
+    image_xscale *= -1; //invertendo a sprite
+}
+
+//indo para o destino
+x = lerp(x, destino, .2);
+
+//arredondando o x
+if ((x >= destino - 10 and destino == 164) or (x <= destino + 10 and destino == 16))
+{
+    x = destino;
+}
