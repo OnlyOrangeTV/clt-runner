@@ -24,7 +24,7 @@ if (timer_cria < 1)
     _objeto.image_xscale = xscale;
     
     //timer para criar os obstaculos e itens
-    timer_cria = random_range(20, 50) - round(fase_atual * 1.5);
+    timer_cria = random_range(20, 50) - fase_atual * 2;
     
     //variaveis de randomização
     _x = choose(20, 161);
@@ -32,5 +32,5 @@ if (timer_cria < 1)
     criador = random(5);
 }
 
-layer_background_speed(spr_bg, 100)
+layer_vspeed("bg", fase_atual)
 show_debug_message(define_level)
