@@ -1,5 +1,6 @@
 //fazendo o player trocar de lado
-if (keyboard_check_pressed(vk_space))
+//se apertei espaço e ja eto em um lado
+if (keyboard_check_pressed(vk_space) and x == destino)
 {
     //mudando meu destino
     if (destino == 164)
@@ -19,7 +20,10 @@ if (keyboard_check_pressed(vk_space))
 x = lerp(x, destino, .2);
 
 //arredondando o x
-if ((x >= destino - 10 and destino == 164) or (x <= destino + 10 and destino == 16))
+if ((x >= destino - 16 and destino == 164) or (x <= destino + 16 and destino == 16))
 {
     x = destino;
 }
+
+coleta_item();
+perde_vida();
