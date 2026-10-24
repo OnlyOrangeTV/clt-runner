@@ -1,6 +1,9 @@
 randomise();
 
+fase_atual = 1;
+
 define_level = 0;
+
 //timer para criar os obstaculos e itens
 timer_cria = 60;
 

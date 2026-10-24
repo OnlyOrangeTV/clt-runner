@@ -42,6 +42,7 @@
   },
   "name":"CLT RUNNER",
   "resources":[
+    {"id":{"name":"fnt_morte","path":"fonts/fnt_morte/fnt_morte.yy",},},
     {"id":{"name":"fnt_pontos","path":"fonts/fnt_pontos/fnt_pontos.yy",},},
     {"id":{"name":"obj_batata","path":"objects/obj_batata/obj_batata.yy",},},
     {"id":{"name":"obj_burg","path":"objects/obj_burg/obj_burg.yy",},},
@@ -61,6 +62,7 @@
     {"id":{"name":"rm_intro_4","path":"rooms/rm_intro_4/rm_intro_4.yy",},},
     {"id":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
     {"id":{"name":"scr_globais","path":"scripts/scr_globais/scr_globais.yy",},},
+    {"id":{"name":"snd_dano","path":"sounds/snd_dano/snd_dano.yy",},},
     {"id":{"name":"snd_pickup","path":"sounds/snd_pickup/snd_pickup.yy",},},
     {"id":{"name":"snd_trilha","path":"sounds/snd_trilha/snd_trilha.yy",},},
     {"id":{"name":"spr_batata","path":"sprites/spr_batata/spr_batata.yy",},},

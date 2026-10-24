@@ -1,8 +1,3 @@
-//parando de tocar a trilha
-audio_stop_all()
-//tocando a trilha sonora
-audio_play_sound(snd_trilha, 0, 1);
-
 //variavel de vida
 vida = 3;
 
@@ -25,10 +20,8 @@ coleta_item = function()
         //variando o pitch
         var _pitch = random_range(.8, 1.2)
         
-        //parando de tocar o som
-        audio_stop_sound(snd_pickup)
-        //tocando o som de coletar
-        audio_play_sound(snd_pickup, 0, 0, , , _pitch);
+        //tocando o som
+        toca_som(snd_pickup, 0, _pitch)
         
         //se a instância existir
         if (instance_exists(_comida_tocada))
@@ -60,17 +53,20 @@ perde_vida = function()
         //perdendo vida
         vida--;
         
+        //tocando som de dano
+        toca_som(snd_dano, 0) 
+        
         //tremendo a tela
-        screenshake(25);
+        screenshake(30);
         
         //se to com zero de vida
         if (vida < 1)
         {
-            //tremendo a tela
-            screenshake(50);
+            //tocando som de dano
+            toca_som(snd_dano, 0, .7);
             
-            //resetando os meus pontos
-            global.pontos = 0;
+            //tremendo a tela
+            screenshake(60);
             
             //colocando o recorde
             //se bati o recorde
@@ -79,7 +75,23 @@ perde_vida = function()
                 global.recorde = global.pontos;
             }
             
+            //resetando os meus pontos
+            global.pontos = 0;
+            
             global.vivo = false;
         }
     }
 }
+
+
+//Método toca som
+toca_som = function(_som, _loop, pitch = random_range(.9, 1.1))
+{
+    //parando o som de dano
+    audio_stop_sound(_som);
+    //som de dano
+    audio_play_sound(_som, 0, _loop, , , pitch);
+}
+
+//tocando som da trilha sonora
+toca_som(snd_trilha, 0, 1)

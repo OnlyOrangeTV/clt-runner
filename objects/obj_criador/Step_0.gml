@@ -1,7 +1,11 @@
-fase_atual = global.level[define_level];
+//valor da variavel define level
+var _define_level = define_level * 10;
 
 //definindo o level do jogo com base nos pontos do player
-define_level = floor(global.pontos / 50)
+define_level = floor(global.pontos / (50 + _define_level))
+
+//variavel para a fase atual
+fase_atual = global.level[define_level];
 
 //se estiver na direita viro para esquerda
 //se não viro para a direita
@@ -24,7 +28,7 @@ if (timer_cria < 1)
     _objeto.image_xscale = xscale;
     
     //timer para criar os obstaculos e itens
-    timer_cria = random_range(20, 50) - fase_atual * 2;
+    timer_cria = random_range(20, 50) / fase_atual;
     
     //variaveis de randomização
     _x = choose(20, 161);
