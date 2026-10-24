@@ -1,3 +1,8 @@
+//parando de tocar a trilha
+audio_stop_all()
+//tocando a trilha sonora
+audio_play_sound(snd_trilha, 0, 1);
+
 //variavel de vida
 vida = 3;
 
@@ -17,6 +22,14 @@ coleta_item = function()
     //se eu tocar na comida ela some
     if (place_meeting(x, y, obj_food))
     {
+        //variando o pitch
+        var _pitch = random_range(.8, 1.2)
+        
+        //parando de tocar o som
+        audio_stop_sound(snd_pickup)
+        //tocando o som de coletar
+        audio_play_sound(snd_pickup, 0, 0, , , _pitch);
+        
         //se a instância existir
         if (instance_exists(_comida_tocada))
         {

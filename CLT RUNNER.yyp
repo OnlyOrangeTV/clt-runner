@@ -61,6 +61,8 @@
     {"id":{"name":"rm_intro_4","path":"rooms/rm_intro_4/rm_intro_4.yy",},},
     {"id":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
     {"id":{"name":"scr_globais","path":"scripts/scr_globais/scr_globais.yy",},},
+    {"id":{"name":"snd_pickup","path":"sounds/snd_pickup/snd_pickup.yy",},},
+    {"id":{"name":"snd_trilha","path":"sounds/snd_trilha/snd_trilha.yy",},},
     {"id":{"name":"spr_batata","path":"sprites/spr_batata/spr_batata.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_burg","path":"sprites/spr_burg/spr_burg.yy",},},
