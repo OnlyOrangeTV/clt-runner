@@ -1,12 +1,3 @@
-//mudando meu atual
-//se eu apertar nas setinhas
-if (keyboard_check_pressed(vk_down))
-{
-    atual++;
-}
-if (keyboard_check_pressed(vk_up))
-{
-    atual--;
-}
-
-atual = clamp(atual, 0, array_length(opcoes) - 1);
+//se o player estiver vivo, não faço nada
+if (global.vivo) exit;
+controla_menu();

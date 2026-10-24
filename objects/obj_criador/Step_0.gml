@@ -1,40 +1,16 @@
-//valor da variavel define level
-var _define_level = define_level * 10;
+layer_vspeed("bg", fase_atual);
 
-//definindo o level do jogo com base nos pontos do player
-define_level = floor(global.pontos / (50 + _define_level))
-
-//variavel para a fase atual
-fase_atual = global.level[define_level];
-
-//se estiver na direita viro para esquerda
-//se não viro para a direita
-if (_x == 20)
+//não roda se o player estiver morto
+if (!global.vivo)  
 {
-    xscale = 1;
-}
-else
-{
-    xscale = -1;
-}
-
-timer_cria--; //inicianod o timer
-
-//criando a instância quando o timer tocar
-if (timer_cria < 1)
-{
-    var _objeto = instance_create_layer(_x, -16, "colect_enemie", opcoes[criador]);
-    _objeto.vspeed = 1.5 * fase_atual;
-    _objeto.image_xscale = xscale;
+    fase_atual = 0;
     
-    //timer para criar os obstaculos e itens
-    timer_cria = random_range(20, 50) / fase_atual;
-    
-    //variaveis de randomização
-    _x = choose(20, 161);
-    
-    criador = random(5);
-}
+    exit;
+}    
 
-layer_vspeed("bg", fase_atual)
-show_debug_message(define_level)
+ 
+
+
+definindo_fase();
+
+cria_objeto();

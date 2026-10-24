@@ -1,3 +1,6 @@
+//tocando som da trilha sonora
+toca_som(snd_trilha, 0, 1);
+
 //variavel de vida
 vida = 3;
 
@@ -78,20 +81,39 @@ perde_vida = function()
             //resetando os meus pontos
             global.pontos = 0;
             
+            //dizendo que morri
             global.vivo = false;
         }
     }
 }
 
-
-//Método toca som
-toca_som = function(_som, _loop, pitch = random_range(.9, 1.1))
+//Método de movimentação
+movimentacao = function()
 {
-    //parando o som de dano
-    audio_stop_sound(_som);
-    //som de dano
-    audio_play_sound(_som, 0, _loop, , , pitch);
+    //fazendo o player trocar de lado
+    //se apertei espaço e ja eto em um lado
+    if (keyboard_check_pressed(vk_space) and x == destino)
+    {
+        //mudando meu destino
+        if (destino == 164)
+        {
+            destino = 16;
+        }
+        else
+        {
+            destino = 164;
+        }
+        
+        
+        image_xscale *= -1; //invertendo a sprite
+    }
+    
+    //indo para o destino
+    x = lerp(x, destino, .2);
+    
+    //arredondando o x
+    if ((x >= destino - 16 and destino == 164) or (x <= destino + 16 and destino == 16))
+    {
+        x = destino;
+    }
 }
-
-//tocando som da trilha sonora
-toca_som(snd_trilha, 0, 1)

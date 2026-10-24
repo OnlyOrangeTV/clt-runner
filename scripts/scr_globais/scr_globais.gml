@@ -22,3 +22,11 @@ function screenshake(_treme = 0)
         }
     }
 }
+
+function toca_som(_som, _loop, pitch = random_range(.9, 1.1))
+{
+    //parando o som de dano
+    audio_stop_sound(_som);
+    //som de dano
+    audio_play_sound(_som, 0, _loop, , , pitch);
+}
